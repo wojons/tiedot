@@ -48,7 +48,7 @@ func Query(w http.ResponseWriter, r *http.Request) {
 			log.Printf("Query returned invalid JSON '%v'", doc)
 			continue
 		}
-		w.Write([]byte(string(resp) + "\n"))
+		w.Write([]byte(string(resp) + "\r\n"))
 	}
 }
 
@@ -79,7 +79,7 @@ func QueryID(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	for k := range queryResult {
-		w.Write([]byte(fmt.Sprintf("%d\n", k)))
+		w.Write([]byte(fmt.Sprintf("%d\r\n", k)))
 	}
 }
 
