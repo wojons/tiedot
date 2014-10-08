@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-var benchTestSize = 50000
+var benchTestSize = 100000
 
 func averageTest(name string, fun func()) {
 	numThreads := runtime.GOMAXPROCS(-1)
